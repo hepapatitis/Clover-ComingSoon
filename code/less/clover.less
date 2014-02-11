@@ -10,7 +10,7 @@
 @btn-unique-color: #444;
 @btn-unique-border-color: #777;
 
-@main-background:url("../images/dummy.jpg");
+@main-background:url("../images/dark_wood.png");
 
 @footer-background: #505050;
 @footer-body-color: #dedede;
@@ -25,8 +25,10 @@
 @default-transition-ease: ease-in-out;
 
 // Let's Start
-html,body { font-family:@body-font; color:@text-color; }
-body { height:100%; background:@main-background center; }
+html,body { font-family:@body-font; color:@text-color; height:100%; font-weight:300; }
+body { height:100%; background:@main-background center; height:100%; font-size:19px; }
+
+.overlay { background:url("../images/overlay.png") center; background-size:cover; width:100%; content:" "; height:100%; position:fixed; }
 
 a {
   color: @text-link-color;
@@ -38,10 +40,16 @@ a:focus {
   text-decoration: underline;
 }
 
-.main-header { color:@header-color; font-family:@header-font; text-transform:uppercase; font-weight:700; letter-spacing:2px; word-spacing:5px; }
+.main-header { color:@header-color; font-family:@header-font; text-transform:uppercase; font-weight:700; letter-spacing:2px; word-spacing:5px; margin:20px 0; }
+
+.newsletter { background:rgba(0,0,0,0.5); border-top:5px solid rgba(255,255,255,0.1); border-bottom:5px solid rgba(255,255,255,0.1); padding:35px 0; }
+
+.footer { padding:45px 0 70px; }
+
+.form-inline { margin:25px 0; }
 
 // Clock
-.clock-container { position:relative; margin:0 auto; text-align:center; height:350px; }
+.clock-container { position:relative; margin:0 auto; text-align:center; height:400px; }
 .clock-wrapper { position:absolute; display:inline-block; margin:150px 0; top:0; left:50%; margin-left:-75px; }
 .clock { display:inline-block; width:150px; height:150px; text-align:center; border:8px solid rgba(255,255,255,0.3); position:absolute; .transform-rotate(-45deg); .transition(); }
 .number { font-size:46px; padding-top:27px; .transform-rotate(45deg); }
@@ -56,6 +64,54 @@ a:focus {
 .clock-bot:hover { margin-top:120px; }
 .clock-left:hover { margin-left:-120px; }
 .clock-right:hover { margin-left:120px; }
+
+/* Button */
+.btn-unique {
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+  text-transform:uppercase;
+}
+.btn-unique:hover,
+.btn-unique:focus,
+.btn-unique:active,
+.btn-unique.active,
+.open .dropdown-toggle.btn-unique {
+  color: #000;
+  background: #ffcc00;
+  border-color: #ffcc00;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.btn-unique:active,
+.btn-unique.active,
+.open .dropdown-toggle.btn-unique {
+  background-image: none;
+}
+.btn-unique.disabled,
+.btn-unique[disabled],
+fieldset[disabled] .btn-unique,
+.btn-unique.disabled:hover,
+.btn-unique[disabled]:hover,
+fieldset[disabled] .btn-unique:hover,
+.btn-unique.disabled:focus,
+.btn-unique[disabled]:focus,
+fieldset[disabled] .btn-unique:focus,
+.btn-unique.disabled:active,
+.btn-unique[disabled]:active,
+fieldset[disabled] .btn-unique:active,
+.btn-unique.disabled.active,
+.btn-unique[disabled].active,
+fieldset[disabled] .btn-unique.active {
+  background-color: transparent;
+  border-color: #979797;
+}
+.btn-unique .badge {
+  color: #ffcc00;
+  background: transparent;
+}
 
 /* Social Media */
 .social {
